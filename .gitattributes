@@ -1,0 +1,7 @@
+* text=auto
+*.sys binary
+*.dll binary
+*.exe binary
+*.bin binary
+*.cat binary
+*.dalp binary

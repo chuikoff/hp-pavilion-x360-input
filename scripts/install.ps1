@@ -21,6 +21,18 @@ function Get-PublishedDrivers {
 }
 
 function Keep-IntelMe {
+  $bundleRoot = Join-Path (Split-Path $here -Parent) "drivers"
+  foreach ($rel in @(
+      "heci-2036.100.0.1024\heci.inf",
+      "lms-2316.5.1.12\lms.inf",
+      "dal-1.38.2020.805\dal.inf"
+    )) {
+    $inf = Join-Path $bundleRoot $rel
+    if (Test-Path $inf) {
+      Write-Output "Публикую $rel"
+      pnputil /add-driver $inf /install
+    }
+  }
   $keep = @(
     @{ Name = "heci.inf"; Good = "2036\.100\.0\.1024"; Bad = "2603\.9\.4\.0" }
     @{ Name = "lms.inf";  Good = "2316\.5\.1\.12";    Bad = "2613\.9\.7\.0" }
