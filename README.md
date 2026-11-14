@@ -1,6 +1,6 @@
 # Клавиатура и тачпад HP Pavilion x360
 
-Закрытые заметки для `DESKTOP-6U89JI4`, HP Pavilion x360 Convertible 14-dh0xxx, Windows 11 26H2.
+Заметки для `DESKTOP-6U89JI4`, HP Pavilion x360 Convertible 14-dh0xxx, Windows 11 26H2.
 
 Симптом: после сна не работают встроенная клавиатура и тачпад. USB-мышь при этом жива.
 
@@ -43,16 +43,10 @@
 
 ## Поставить заново
 
-PowerShell от администратора:
+Открыть PowerShell от администратора, перейти в каталог репозитория и запустить:
 
 ```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-& "$PSScriptRoot\scripts\install.ps1"
-```
-
-Из каталога репозитория:
-
-```powershell
+Set-Location C:\Users\Павел\Documents\hp-pavilion-x360-input
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\install.ps1
 ```
 

@@ -48,7 +48,7 @@ function Keep-IntelMe {
       continue
     }
     Write-Output "Удаляю $($bad.Published) $($item.Name) $($item.Bad)"
-    pnputil /delete-driver $bad.Published /uninstall
+    pnputil /delete-driver $bad.Published /uninstall /force
   }
   pnputil /scan-devices | Out-Null
 
